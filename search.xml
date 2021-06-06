@@ -19,6 +19,45 @@
 ]]></content>
   </entry>
   <entry>
+    <title>刷题day01</title>
+    <url>/project/2021/06/03/%E5%88%B7%E9%A2%98day01/</url>
+    <content><![CDATA[<p>1、删除有序链表中重复出现的元素<br>描述<br>给出一个升序排序的链表，删除链表中的所有重复出现的元素，只保留原链表中只出现一次的元素。<br>例如：<br>给出的链表为1→2→3→3→4→4→5, 返回1→2→5.<br>给出的链表为1→1→1→2→3, 返回2→3</p>
+<p>class Solution {<br>public:<br>    /**<br>     *<br>     * @param head ListNode类<br>     * @return ListNode类<br>     <em>/<br>    ListNode</em> deleteDuplicates(ListNode* head) {<br>        //创建一个头节点<br>    ListNode *dummy=new ListNode(0);<br>    dummy-&gt;next=head;<br>    ListNode *pre=dummy,*cur=head,*tmp;<br>    while(cur&amp;&amp;cur-&gt;next){<br>        if(cur-&gt;val==cur-&gt;next-&gt;val){<br>            tmp=cur-&gt;next;<br>            while(tmp&amp;&amp;tmp-&gt;val==cur-&gt;val){<br>                tmp=tmp-&gt;next;<br>            }<br>            pre-&gt;next=tmp;<br>            cur=tmp;<br>        }else{</p>
+<pre><code>        pre=pre-&gt;next;
+        cur=cur-&gt;next;
+    &#125;
+
+&#125;
+return dummy-&gt;next;
+&#125;
+</code></pre>
+<p>};</p>
+<p>2、给出一个升序排序的链表，删除链表中的所有重复出现的元素，重复元素只保留一个</p>
+<p>class Solution {<br>public:</p>
+<pre><code>ListNode* deleteDuplicates(ListNode* head) &#123;
+    ListNode *dummy=new ListNode(0);
+    dummy-&gt;next=head;
+    ListNode *pre=dummy,*cur=head,*tmp;
+    while(cur&amp;&amp;cur-&gt;next)&#123;
+        if(cur-&gt;val==cur-&gt;next-&gt;val)&#123;
+            while(cur&amp;&amp;cur-&gt;next&amp;&amp;cur-&gt;val==cur-&gt;next-&gt;val)&#123;
+                cur=cur-&gt;next;
+            &#125;
+            pre-&gt;next=cur;
+            pre=pre-&gt;next;
+            cur=cur-&gt;next;
+        &#125;else&#123;
+            pre=pre-&gt;next;
+            cur=cur-&gt;next;
+        &#125;
+    &#125;
+    return dummy-&gt;next;
+&#125;
+</code></pre>
+<p>};</p>
+]]></content>
+  </entry>
+  <entry>
     <title>for new start</title>
     <url>/project/2021/06/03/for-new-start/</url>
     <content><![CDATA[<p>越努力越幸运！<br>Give me an offer,please!</p>
